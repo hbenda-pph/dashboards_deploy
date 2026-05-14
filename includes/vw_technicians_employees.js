@@ -1,7 +1,8 @@
 // includes/vw_technicians_employees.js
 module.exports = (companyId, projectId, rawDataset) =>
-  publish("vw_technicians_employees", {
+  publish("vw_technicians_employees_" + companyId, {
     type: "view",
+    name: "vw_technicians_employees",
     database: projectId,
     schema: "dashboards",
     description: "Unified view of Technicians and Employees per company. Shared base for vw_job_technicians and other dashboard views.",

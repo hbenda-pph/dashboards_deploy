@@ -1,12 +1,13 @@
 // includes/vw_jobs_technicians.js
 module.exports = (companyId, projectId, rawDataset) =>
-  publish("vw_jobs_technicians", {
+  publish("vw_jobs_technicians_" + companyId, {
     type: "view",
+    name: "vw_jobs_technicians",
     database: projectId,
     schema: "dashboards",
     description: "Canonical source of Assigned Technicians and Primary Technician per Job. Shared across DailyTracker, PULSE, LTM and future dashboards.",
     tags: ["dashboards", "vw_jobs_technicians"],
-    dependencies: [{ database: projectId, schema: "dashboards", name: "vw_technicians_employees" }]
+    dependencies: ["vw_technicians_employees_" + companyId]
   })
     .query(`
 WITH
