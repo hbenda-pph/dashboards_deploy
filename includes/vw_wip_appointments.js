@@ -1,8 +1,7 @@
 // includes/vw_wip_appointments.js
 module.exports = (companyId, projectId, rawDataset) =>
-  publish("vw_wip_appointments_" + companyId, {
+  publish("vw_wip_appointments", {
     type: "view",
-    name: "vw_wip_appointments",
     database: projectId,
     schema: "dashboards",
     description: "WIP Appointments summary per Job — first, next, start and total appointments. Shared across DailyTracker, PULSE, LTM and future dashboards.",
